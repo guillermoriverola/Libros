@@ -15,6 +15,7 @@ import edu.upc.eetac.dsa.dsesto.libreria.api.MediaType;
 public class Book {
 	@InjectLinks({
 			@InjectLink(resource = BookResource.class, style = Style.ABSOLUTE, rel = "books", title = "Colección de libros", type = MediaType.LIBRERIA_API_BOOK_COLLECTION),
+			@InjectLink(value = "/reviews?title={title}", style = Style.ABSOLUTE, rel = "reviews", title = "Reviews del libro", type = MediaType.LIBRERIA_API_REVIEW_COLLECTION, bindings = { @Binding(name = "title", value = "${instance.title}") }),
 			@InjectLink(resource = BookResource.class, style = Style.ABSOLUTE, rel = "self edit", title = "Libro", type = MediaType.LIBRERIA_API_BOOK, method = "getBook", bindings = @Binding(name = "title", value = "${instance.title}")) })
 	private List<Link> links;
 
