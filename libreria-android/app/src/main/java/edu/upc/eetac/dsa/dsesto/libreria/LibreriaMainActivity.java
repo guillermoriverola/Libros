@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -90,10 +92,12 @@ public class LibreriaMainActivity extends ListActivity {
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Book book = booksList.get(position);
-        Log.d(TAG, book.getLinks().get("self").getTarget());
 
         Intent intent = new Intent(this, BookDetailActivity.class);
         intent.putExtra("url", book.getLinks().get("self").getTarget());
+        //Intent intent = new Intent(this, BookReviewsActivity.class);
+        //intent.putExtra("url", book.getLinks().get("reviews").getTarget());
+        intent.putExtra("url_reviews", book.getLinks().get("reviews").getTarget());
         startActivity(intent);
     }
 

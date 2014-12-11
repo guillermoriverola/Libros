@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".BookDetailActivity" />
+        <activity android:name=".BookReviewsActivity" />
+        <activity android:name=".WriteReviewActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

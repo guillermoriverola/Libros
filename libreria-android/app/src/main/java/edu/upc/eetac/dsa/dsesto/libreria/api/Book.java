@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class Book {
     private String title;
+    private int bookid;
     private String author;
     private String language;
     private String edition;
@@ -84,5 +85,13 @@ public class Book {
 
     public void setETag(String eTag) {
         this.eTag = eTag;
+    }
+
+    public int getBookid() {
+        return bookid;
+    }
+
+    public void setBookid(int bookid) {
+        this.bookid = bookid;
     }
 }

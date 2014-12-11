@@ -9,6 +9,7 @@ import org.glassfish.jersey.linking.InjectLink.Style;
 import org.glassfish.jersey.linking.InjectLinks;
 
 import edu.upc.eetac.dsa.dsesto.libreria.api.BookResource;
+import edu.upc.eetac.dsa.dsesto.libreria.api.ReviewResource;
 import edu.upc.eetac.dsa.dsesto.libreria.api.LibreriaRootAPIResource;
 import edu.upc.eetac.dsa.dsesto.libreria.api.MediaType;
 
@@ -17,6 +18,7 @@ public class LibreriaRootAPI {
 	@InjectLinks({
 			@InjectLink(resource = LibreriaRootAPIResource.class, style = Style.ABSOLUTE, rel = "self bookmark home", title = "Libreria Root API", method = "getRootAPI"),
 			@InjectLink(resource = BookResource.class, style = Style.ABSOLUTE, rel = "books", title = "Lista de libros", type = MediaType.LIBRERIA_API_BOOK_COLLECTION),
+			@InjectLink(resource = ReviewResource.class, style = Style.ABSOLUTE, rel = "post-reviews", title = "Create review", type = MediaType.LIBRERIA_API_REVIEW),
 			@InjectLink(resource = BookResource.class, style = Style.ABSOLUTE, rel = "create-books", title = "Crear libro", type = MediaType.LIBRERIA_API_BOOK) })
 	private List<Link> links;
 

@@ -444,6 +444,7 @@ public class BookResource {
 				book.setPrintingDate(rs.getString("printingDate"));
 				book.setPublisher(rs.getString("publisher"));
 				book.setTitle(rs.getString("title"));
+				book.setBookid(rs.getInt("bookid"));
 			} else {
 				throw new NotFoundException("There's no book with title="
 						+ title);

@@ -26,6 +26,7 @@ public class Book {
 	private String editonDate;
 	private String printingDate;
 	private String publisher;
+	private int bookid;
 
 	public String getTitle() {
 		return title;
@@ -91,4 +92,11 @@ public class Book {
 		this.links = links;
 	}
 
+	public int getBookid() {
+		return bookid;
+	}
+
+	public void setBookid(int bookid) {
+		this.bookid = bookid;
+	}
 }
